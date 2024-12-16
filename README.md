@@ -69,21 +69,25 @@ whoami
 ```bash
 hostname
 ````
+![Captura do comando hostname no terminal](img/imagem-comando-hostname.png)
 
  Exibe informações detalhadas sobre o sistema operacional, como o kernel e a versão do Ubuntu em uso.
 ```bash
 uname -a
 ````
+![Captura do comando uname -a no terminal](img/imagem-comando-uname-a.png)
 
 Exibe o nome do usuário atual.
  ```bash
 id -un
 ````
+![Captura do comando id -un no terminal](img/imagem-comando-id-un.png)
 
 Exibe o nome do usuário configurado no sistema.
 ```bash
 echo $USER
 ````
+![Captura do comando echo $USER no terminal](img/imagem-comando-echosuper.png)
 
 
 
