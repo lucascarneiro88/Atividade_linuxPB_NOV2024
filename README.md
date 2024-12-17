@@ -170,11 +170,18 @@ Para organizar os arquivos, crie um diretório com o comando:
  ```bash
 mkdir scripts
 ````
+
+
+![Captura imagem criando diretotio](img/imagem-cria-diretorio-scripts.png)
 ### Passo 2: Navegar até o diretório criado.
 Use o comando a seguir para acessar o diretório:
  ```bash
 cd ~/scripts
 ````
+
+
+![Captura imagem entrando no diretotio](img/imagem-entra-diretorio-scripts.png)  
+
 **Observação:** Agora, dentro do diretório scripts, você está pronto para criar o arquivo de shell script de verificação.
 
 
@@ -183,6 +190,9 @@ No terminal, utilize o comando:
  ```bash
 nano valida_nginx.sh
 ````
+
+
+![Captura imagem criando o arquivo valida](img/imagem-comand-cria-arquivovalida.png)  
 
 **Observação:** O sufixo .sh não é obrigatório, mas é uma convenção amplamente utilizada para indicar que o arquivo se trata de um shell script. Isso facilita a identificação e é considerado uma boa prática.
 
@@ -199,6 +209,8 @@ Com o arquivo aberto para edição, crie um script que valide (verifique) se o s
 
 - Um arquivo para registrar quando o **serviço está online**;
 - Outro arquivo para registrar quando o **serviço está offline**.
+
+![Captura imagem do script de validacao criado](img/imagem-script.png)  
 ***
 
 # 5. Automatização da Execução do Script
