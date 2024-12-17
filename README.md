@@ -150,6 +150,8 @@ Com o Nginx rodando no terminal, abra o navegador e acesse http://localhost. Se 
 ### Passo 5: Acessar a página de boas-vindas do Nginx
 
 Se tudo estiver funcionando corretamente, você verá a página de boas-vindas do Nginx com a mensagem *"Welcome to Nginx!"*.
+
+
 ![Captura do browser com a pagina nginx](img/imagem-ngnix-browser.png)
 
 - **Agora que você configurou o servidor Nginx, pode seguir para a criação do script de verificação de status.**
@@ -157,10 +159,76 @@ Se tudo estiver funcionando corretamente, você verá a página de boas-vindas d
 ***
 ***
 # 4. Criação do Script de Verificação de Status
+**Informação:** Onde colocar o script? Ele pode ser colocado em qualquer diretório de sua escolha, mas há algumas convenções para o local dos scripts no Linux:
 
+Scripts pessoais de usuário: Normalmente ficam em /home/usuario.
+Scripts de sistema: Normalmente ficam em /usr/local/bin ou /opt/.
+Se o script for algo mais global, pode ser colocado em qualquer um dos dois primeiros diretórios.
+
+### Passo 1: Criar um diretório de scripts.
+Para organizar os arquivos, crie um diretório com o comando:
+ ```bash
+mkdir scripts
+````
+### Passo 2: Navegar até o diretório criado.
+Use o comando a seguir para acessar o diretório:
+ ```bash
+cd ~/scripts
+````
+**Observação:** Agora, dentro do diretório scripts, você está pronto para criar o arquivo de shell script de verificação.
+
+
+### Passo 3: Criar o arquivo usando o editor Nano.
+No terminal, utilize o comando:
+ ```bash
+nano valida_nginx.sh
+````
+
+**Observação:** O sufixo .sh não é obrigatório, mas é uma convenção amplamente utilizada para indicar que o arquivo se trata de um shell script. Isso facilita a identificação e é considerado uma boa prática.
+
+### Passo 4: Escrever o script de validação.
+Com o arquivo aberto para edição, crie um script que valide (verifique) se o serviço está online. O script deve enviar o resultado dessa validação para um diretório que você definir.
+                                                 
+   **A Estrutura do script deve incluir:**  
+- Data e hora;
+- Nome do serviço;
+- Status (online ou offline);
+- Mensagem personalizada, informando se o serviço está online ou offline.
+
+**Observação:** O script deve gerar dois arquivos de saída:
+
+- Um arquivo para registrar quando o **serviço está online**;
+- Outro arquivo para registrar quando o **serviço está offline**.
 ***
 
 # 5. Automatização da Execução do Script
+
+Configure a execução automatizada do script a cada **5 minutos**. Para isso, utilize o **cron**.
+
+## Configuração do cron
+Segue o passo a passo para configurar o cron:
+
+- Use este comando para editar o arquivo do crontab
+ ```bash
+crontab -e
+````
+
+- Adicione a seguinte linha ao final do arquivo para agendar o script
+
+ ```bash
+*/5 * * * * /caminho/para/o/script/valida_nginx.sh
+````
+
+- Salve e saia do editor.
+
+- Para verificar se a configuração foi aplicada corretamente, use este comando:
+
+ ```bash
+crontab -l
+````
+Isso mostrara a lista de tarefas agendadas no cron para o usuário atual.
+
+
 
 
 
