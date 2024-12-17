@@ -24,14 +24,14 @@
 
 1. [Ativação do WSL](#ativação-do-wsl)
 2. [Instalação do Ubuntu 20.04 ou superior](#instalação-do-ubuntu-2004-ou-superior)
-3. [Subir um servidor Nginx no Ubuntu](#instalação-do-nginx-no-ubuntu)
+3. [Subir um servidor Nginx no Ubuntu](#subir-um-servidor-nginx)
 4. [Criação do Script de Verificação de Status](#criação-do-script-de-verificação-de-status)
 5. [Automatização da Execução do Script](#automatização-da-execução-do-script)
 6. [Versionamento e Documentação](#versionamento-e-documentação)
 
 ***
 ***
-# 1. Ativação do WSL
+ # 1. Ativação do WSL
 
 Para ativar o Windows Subsystem for Linux (WSL) no Windows, você pode seguir os seguintes passos:
 
@@ -64,7 +64,7 @@ Este comando irá instalar automaticamente o WSL e os componentes necessários. 
 
 ***
 
-# 2.  Instalação do Ubuntu 20.04 ou superior
+# 2. Instalação do Ubuntu 20.04 ou superior
 ### Configuração do Ubuntu
 Após a instalação do Ubuntu, vá até o Menu Iniciar e procure por Ubuntu. Clique para abrir o aplicativo.  
 Na primeira vez que o Ubuntu for aberto, ele solicitará a criação de um usuário e senha.  
@@ -120,24 +120,28 @@ sudo apt update && sudo apt upgrade -y
  ```bash
 sudo apt install nginx -y
 ````
+![Captura do comando para instalar nginx](img/imagem-install-nginx.png)
 
 ### Passo 2: Iniciar o serviço do Nginx
 Para iniciar o Nginx, use o comando:
  ```bash
 sudo systemctl start nginx
 ````
+![Captura do comando para iniciar nginx](img/imagem-comando-start-nginx.png)
 
 ### Passo 3: Habilitar o Nginx para iniciar com o sistema
 Para garantir que o Nginx inicie automaticamente após um reinício do sistema, use o comando:
  ```bash
 sudo systemctl enable nginx
 ````
+![Captura do comando para habilitar nginx](img/imagem-comando-habilita-nginx.png)
 
 ### Passo 4: Verificar se o servidor está rodando
 Para verificar o status do servidor Nginx, use o comando:
  ```bash
 systemctl status nginx
 ````
+![Captura do comando para ver status nginx](img/imagem-comando-status-nginx.png)
 
 ***Observação:*** O Nginx deve estar rodando e disponível no endereço http://localhost ou no IP do sistema.
 
@@ -146,8 +150,18 @@ Com o Nginx rodando no terminal, abra o navegador e acesse http://localhost. Se 
 ### Passo 5: Acessar a página de boas-vindas do Nginx
 
 Se tudo estiver funcionando corretamente, você verá a página de boas-vindas do Nginx com a mensagem *"Welcome to Nginx!"*.
+![Captura do browser com a pagina nginx](img/imagem-ngnix-browser.png)
 
 - **Agora que você configurou o servidor Nginx, pode seguir para a criação do script de verificação de status.**
+
+***
+***
+# 4. Criação do Script de Verificação de Status
+
+***
+
+# 5. Automatização da Execução do Script
+
 
 
 
