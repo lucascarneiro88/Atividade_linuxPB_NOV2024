@@ -338,8 +338,6 @@ Isso mostrara a lista de tarefas agendadas no cron para o usuário atual.
 
 `Para mais informações sobre como configurar o Nginx e o UFW, você pode explorar as seguintes documentações:`  
 
-- <a href="https://help.ubuntu.com/community/UFW" target="_blank">Documentação do UFW (Uncomplicated Firewall)</a>
-- <a href="https://nginx.org/en/docs/" target="_blank">Documentação do Nginx</a>
 
 
 
