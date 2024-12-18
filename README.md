@@ -337,9 +337,8 @@ Isso mostrara a lista de tarefas agendadas no cron para o usuário atual.
 ` O UFW permite que você controle o tráfego de entrada e saída, permitindo ou bloqueando conexões em portas específicas.`
 
 `Para mais informações sobre como configurar o Nginx e o UFW, você pode explorar as seguintes documentações:`  
-
-- [Documentação do UFW](https://help.ubuntu.com/community/UFW){:target="_blank"}
-- [Documentação do Nginx](https://nginx.org/en/docs/){:target="_blank"}
+- [Documentação do UFW](https://help.ubuntu.com/community/UFW)
+- [Documentação do Nginx](https://nginx.org/en/docs/)
 
 
 
