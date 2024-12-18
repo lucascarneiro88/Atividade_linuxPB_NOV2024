@@ -245,7 +245,11 @@ crontab -e
  ```bash
 crontab -l
 ````
-Isso mostrara a lista de tarefas agendadas no cron para o usuário atual.
+
+
+Isso mostrara a lista de tarefas agendadas no cron para o usuário atual.  
+
+![Captura de tarefa agendada no cron  crontab](img/imagem-verifica-tarefa-agendada-cron.png)
 
 
 
