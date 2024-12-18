@@ -225,13 +225,20 @@ Segue o passo a passo para configurar o cron:
 crontab -e
 ````
 
+
+
 - Adicione a seguinte linha ao final do arquivo para agendar o script
 
  ```bash
 */5 * * * * /caminho/para/o/script/valida_nginx.sh
 ````
 
+![Captura do comando para editar crontab](img/imagem-add-cron.png)
+
 - Salve e saia do editor.
+    - Pressione Ctrl+O para abrir a opção de salvar.
+    - Confirme o nome do arquivo pressionando Enter.
+    - Pressione Ctrl+X para fechar o editor.
 
 - Para verificar se a configuração foi aplicada corretamente, use este comando:
 
