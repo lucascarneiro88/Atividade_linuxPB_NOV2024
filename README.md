@@ -254,24 +254,33 @@ chmod +x ~/scripts/valida_nginx.sh
 ````  
   - Verificar os Logs.
     
-     O script grava dois tipos de logs: online.log e offline.log.
+     ***O script grava dois tipos de logs: online.log e offline.log.***
     
       Para verificar qual log foi atualizado:
       Se o Nginx estiver online, o log online.log deverá conter algo como:
 
       ```bash
-            cat ~/scripts/logs/online.log
+            tail ~/scripts/logs/online.log
 
      ````
+
+
+    ![Captura imagem log online](img/imagem-teste-manual-online-ngnix.png)  
 
 
        Se o Nginx estiver offline, o log offline.log
 
 
        ```bash
-       cat ~/scripts/logs/offline.log
+       tail ~/scripts/logs/offline.log
 
        ````   
+
+
+    ![Captura imagem log offline](img/imagem-teste-manual-offline-nginx.png)  
+
+**Observação:** Aqui já podemos ver que o cron está configurado automaticamente para executar o script a cada 5 minutos, atualizando ambos os logs: online.log e offline.log, dependendo do status do serviço.
+
 
 ***
 
