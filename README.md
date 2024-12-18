@@ -237,7 +237,44 @@ Com o arquivo aberto para edição, crie um script que valide (verifique) se o s
 - Outro arquivo para registrar quando o **serviço está offline**.
 
 ![Captura imagem do script de validacao criado](img/imagem-script.png)  
+
+### Passo 4:  Testar manualmente o script valida_nginx.sh criado.
+  -  Certifique-se de que o script tem permissão para ser executado:  
+  
+  
+
+ ```bash
+chmod +x ~/scripts/valida_nginx.sh
+````
+  - Executar o Script.
+
+ ```bash
+./valida_nginx.sh
+
+````  
+  - Verificar os Logs.
+    
+     O script grava dois tipos de logs: online.log e offline.log.
+    
+      Para verificar qual log foi atualizado:
+      Se o Nginx estiver online, o log online.log deverá conter algo como:
+
+      ```bash
+            cat ~/scripts/logs/online.log
+
+     ````
+
+
+       Se o Nginx estiver offline, o log offline.log
+
+
+       ```bash
+       cat ~/scripts/logs/offline.log
+
+       ````   
+
 ***
+
 
 # 5. Automatização da Execução do Script
 
