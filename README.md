@@ -27,15 +27,16 @@
 3. [Subir um servidor Nginx no Ubuntu](#subir-um-servidor-nginx)
 4. [Criação do Script de Verificação de Status](#criacao-do-script-de-verificacao-de-status)
 5. [Automatização da Execução do Script](#automatizacao-da-execucao-do-script)
+6. [Documentação de configuração Adicional: Firewall com UFW](#configuracao-adicional-firewall)
 
 
 ***
 ***
- # 1. <a id="ativacao-do-wsl"> Ativação do WSL
+ # 1. <a id="ativacao-do-wsl"> Ativação do WSL.
 
 Para ativar o Windows Subsystem for Linux (WSL) no Windows, você pode seguir os seguintes passos:
 
-### Opção 1: Usando o PowerShell (Método Recomendado)
+### Opção 1: Usando o PowerShell.
 1. Abra o **PowerShell** com permissões de administrador e execute o comando:
 
 ```bash
@@ -47,7 +48,7 @@ Este comando irá instalar automaticamente o WSL e os componentes necessários. 
 
 ***
 
-### Opção 2: Ativação Manual dos Recursos no Painel de Controle
+### Opção 2: Ativação Manual dos Recursos no Painel de Controle.
 
  Caso queira ativar o WSL manualmente ou se a opção do PowerShell não funcionar corretamente, siga os passos abaixo:
 
@@ -63,16 +64,17 @@ Este comando irá instalar automaticamente o WSL e os componentes necessários. 
 6. Após o reinício, vá até a **Windows Store** e baixe o **Ubuntu 20.04** ou superior.
 
 ***
+***
 
-# 2. <a id="instalacao-do-ubuntu-2004-ou-superior"> Instalação do Ubuntu 20.04 ou superior
-### Configuração do Ubuntu
+# 2. <a id="instalacao-do-ubuntu-2004-ou-superior"> Instalação do Ubuntu 20.04 ou superior.
+### Configuração do Ubuntu.
 Após a instalação do Ubuntu, vá até o Menu Iniciar e procure por Ubuntu. Clique para abrir o aplicativo.  
 Na primeira vez que o Ubuntu for aberto, ele solicitará a criação de um usuário e senha.  
 Isso é necessário para além do usuário root, que já existe no sistema.
 
 
 ***
-### Testando a Configuração
+### Testando a Configuração.
 Após a instalação e configuração do Ubuntu, você pode usar alguns comandos para verificar o funcionamento do sistema como:  
 
  Exibe o nome do usuário atualmente logado no sistema.
@@ -107,10 +109,10 @@ echo $USER
 ***
 ***
 
-# 3.<a id="subir-um-servidor-nginx"> Subir um servidor Nginx
+# 3.<a id="subir-um-servidor-nginx"> Subir um servidor Nginx.
 Agora que o Ubuntu está configurado corretamente, podemos proceder com a instalação e configuração do servidor Nginx no Ubuntu.
 
-### Passo 1: Atualizar o sistema e instalar o Nginx
+### Passo 1: Atualizar o sistema e instalar o Nginx.
 
 - Comando para atualizar o sistema:
  ```bash
@@ -122,21 +124,21 @@ sudo apt install nginx -y
 ````
 ![Captura do comando para instalar nginx](img/imagem-install-nginx.png)
 
-### Passo 2: Iniciar o serviço do Nginx
+### Passo 2: Iniciar o serviço do Nginx.
 Para iniciar o Nginx, use o comando:
  ```bash
 sudo systemctl start nginx
 ````
 ![Captura do comando para iniciar nginx](img/imagem-comando-start-nginx.png)
 
-### Passo 3: Habilitar o Nginx para iniciar com o sistema
+### Passo 3: Habilitar o Nginx para iniciar com o sistema.
 Para garantir que o Nginx inicie automaticamente após um reinício do sistema, use o comando:
  ```bash
 sudo systemctl enable nginx
 ````
 ![Captura do comando para habilitar nginx](img/imagem-comando-habilita-nginx.png)
 
-### Passo 4: Verificar se o servidor está rodando
+### Passo 4: Verificar se o servidor está rodando.
 Para verificar o status do servidor Nginx, use o comando:
  ```bash
 systemctl status nginx
@@ -173,7 +175,7 @@ Com o Nginx rodando no terminal, abra o navegador e acesse http://localhost. Se 
      **verá o arquivo index.nginx-debian.html, que é a página inicial padrão do Nginx.**
 
 
-### Passo 5: Acessar a página de boas-vindas do Nginx
+### Passo 5: Acessar a página de boas-vindas do Nginx.
 
 Se tudo estiver funcionando corretamente, você verá a página de boas-vindas do Nginx com a mensagem *"Welcome to Nginx!"*.
 
@@ -184,7 +186,7 @@ Se tudo estiver funcionando corretamente, você verá a página de boas-vindas d
 
 ***
 ***
-# 4.<a id="criacao-do-script-de-verificacao-de-status"></a> Criação do Script de Verificação de Status
+# 4.<a id="criacao-do-script-de-verificacao-de-status"></a> Criação do Script de Verificação de Status.
 **Informação:** Onde colocar o script? Ele pode ser colocado em qualquer diretório de sua escolha, mas há algumas convenções para o local dos scripts no Linux:
 
 Scripts pessoais de usuário: Normalmente ficam em /home/usuario.
@@ -199,6 +201,7 @@ mkdir scripts
 
 
 ![Captura imagem criando diretotio](img/imagem-cria-diretorio-scripts.png)
+
 ### Passo 2: Navegar até o diretório criado.
 Use o comando a seguir para acessar o diretório:
  ```bash
@@ -238,7 +241,7 @@ Com o arquivo aberto para edição, crie um script que valide (verifique) se o s
 
 ![Captura imagem do script de validacao criado](img/imagem-script.png)  
 
-### Passo 4:  Testar manualmente o script valida_nginx.sh criado.
+### Passo 5:  Testar manualmente o script valida_nginx.sh criado.
   -  Certifique-se de que o script tem permissão para ser executado:  
   
   
@@ -283,23 +286,24 @@ chmod +x ~/scripts/valida_nginx.sh
 
 
 ***
+***
 
 
-# 5.<a id="automatizacao-da-execucao-do-script"> Automatização da Execução do Script
+# 5.<a id="automatizacao-da-execucao-do-script"> Automatização da Execução do Script.
 
 Configure a execução automatizada do script a cada **5 minutos**. Para isso, utilize o **cron**.
 
 ## Configuração do cron
 Segue o passo a passo para configurar o cron:
 
-- Use este comando para editar o arquivo do crontab
+- **Passo 1:** Use este comando para editar o arquivo do crontab.
  ```bash
 crontab -e
 ````
 
 
 
-- Adicione a seguinte linha ao final do arquivo para agendar o script
+- **Passo 2:** Adicione a seguinte linha ao final do arquivo para agendar o script.
 
  ```bash
 */5 * * * * /caminho/para/o/script/valida_nginx.sh
@@ -312,7 +316,7 @@ crontab -e
     - Confirme o nome do arquivo pressionando Enter.
     - Pressione Ctrl+X para fechar o editor.
 
-- Para verificar se a configuração foi aplicada corretamente, use este comando:
+- **Passo 3:** Para verificar se a configuração foi aplicada corretamente, use este comando:
 
  ```bash
 crontab -l
@@ -322,6 +326,20 @@ crontab -l
 Isso mostrara a lista de tarefas agendadas no cron para o usuário atual.  
 
 ![Captura de tarefa agendada no cron  crontab](img/imagem-verifica-tarefa-agendada-cron.png)
+
+***
+***
+
+
+# 6 -<a id="configuracao-adicional-firewall"> Configuração Adicional: Firewall com UFW.  
+` Caso você precise ajustar a segurança do seu servidor, é possível configurar o firewall no Ubuntu utilizando o UFW (Uncomplicated Firewall).`  
+
+` O UFW permite que você controle o tráfego de entrada e saída, permitindo ou bloqueando conexões em portas específicas.`
+
+`Para mais informações sobre como configurar o Nginx e o UFW, você pode explorar as seguintes documentações:`  
+
+- <a href="https://help.ubuntu.com/community/UFW" target="_blank">Documentação do UFW (Uncomplicated Firewall)</a>
+- <a href="https://nginx.org/en/docs/" target="_blank">Documentação do Nginx</a>
 
 
 
