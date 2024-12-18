@@ -22,16 +22,16 @@
 ***
 ## ÍNDICE
 
-1. [Ativação do WSL](#ativação-do-wsl)
-2. [Instalação do Ubuntu 20.04 ou superior](#instalação-do-ubuntu-2004-ou-superior)
+1. [Ativação do WSL](#ativacao-do-wsl)
+2. [Instalação do Ubuntu 20.04 ou superior](#instalacao-do-ubuntu-2004-ou-superior)
 3. [Subir um servidor Nginx no Ubuntu](#subir-um-servidor-nginx)
-4. [Criação do Script de Verificação de Status](#criação-do-script-de-verificação-de-status)
-5. [Automatização da Execução do Script](#automatização-da-execução-do-script)
-6. [Versionamento e Documentação](#versionamento-e-documentação)
+4. [Criação do Script de Verificação de Status](#criacao-do-script-de-verificacao-de-status)
+5. [Automatização da Execução do Script](#automatizacao-da-execucao-do-script)
+
 
 ***
 ***
- # 1. Ativação do WSL
+ # 1. <a id="ativacao-do-wsl"> Ativação do WSL
 
 Para ativar o Windows Subsystem for Linux (WSL) no Windows, você pode seguir os seguintes passos:
 
@@ -64,7 +64,7 @@ Este comando irá instalar automaticamente o WSL e os componentes necessários. 
 
 ***
 
-# 2. Instalação do Ubuntu 20.04 ou superior
+# 2. <a id="instalacao-do-ubuntu-2004-ou-superior"> Instalação do Ubuntu 20.04 ou superior
 ### Configuração do Ubuntu
 Após a instalação do Ubuntu, vá até o Menu Iniciar e procure por Ubuntu. Clique para abrir o aplicativo.  
 Na primeira vez que o Ubuntu for aberto, ele solicitará a criação de um usuário e senha.  
@@ -107,7 +107,7 @@ echo $USER
 ***
 ***
 
-# 3. Subir um servidor Nginx
+# 3.<a id="subir-um-servidor-nginx"> Subir um servidor Nginx
 Agora que o Ubuntu está configurado corretamente, podemos proceder com a instalação e configuração do servidor Nginx no Ubuntu.
 
 ### Passo 1: Atualizar o sistema e instalar o Nginx
@@ -184,7 +184,7 @@ Se tudo estiver funcionando corretamente, você verá a página de boas-vindas d
 
 ***
 ***
-# 4. Criação do Script de Verificação de Status
+# 4.<a id="criacao-do-script-de-verificacao-de-status"></a> Criação do Script de Verificação de Status
 **Informação:** Onde colocar o script? Ele pode ser colocado em qualquer diretório de sua escolha, mas há algumas convenções para o local dos scripts no Linux:
 
 Scripts pessoais de usuário: Normalmente ficam em /home/usuario.
@@ -285,7 +285,7 @@ chmod +x ~/scripts/valida_nginx.sh
 ***
 
 
-# 5. Automatização da Execução do Script
+# 5.<a id="automatizacao-da-execucao-do-script"> Automatização da Execução do Script
 
 Configure a execução automatizada do script a cada **5 minutos**. Para isso, utilize o **cron**.
 
