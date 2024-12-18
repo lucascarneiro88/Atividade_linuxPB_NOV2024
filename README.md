@@ -147,6 +147,32 @@ systemctl status nginx
 
 Com o Nginx rodando no terminal, abra o navegador e acesse http://localhost. Se estiver rodando em uma máquina virtual, substitua localhost pelo IP da máquina.
 
+### Comandos básicos para gerenciar o Nginx:
+
+| Comando                             | Função                                      |
+|-------------------------------------|---------------------------------------------|
+| `sudo systemctl disable nginx`      | Desabilita o serviço Nginx no boot.         |
+| `sudo systemctl enable nginx`       | Habilita o serviço Nginx no boot.           |
+| `sudo systemctl stop nginx`         | Para o serviço Nginx.                       |
+| `sudo systemctl start nginx`        | Inicia o serviço Nginx.                     |
+| `sudo systemctl restart nginx`      | Reinicia o serviço Nginx.                   |
+| `sudo systemctl reload nginx`       | Recarrega as configurações sem reiniciar.   |  
+
+- **Informação**
+
+    - Acesse o diretório onde as páginas web estão armazenadas:  
+     ```bash
+        cd /var/www/html
+     ````
+
+    - Verifique os arquivos na pasta:
+       ```bash
+        ls
+       ````
+
+     **verá o arquivo index.nginx-debian.html, que é a página inicial padrão do Nginx.**
+
+
 ### Passo 5: Acessar a página de boas-vindas do Nginx
 
 Se tudo estiver funcionando corretamente, você verá a página de boas-vindas do Nginx com a mensagem *"Welcome to Nginx!"*.
